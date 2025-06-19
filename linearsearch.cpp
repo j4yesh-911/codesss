@@ -54,46 +54,72 @@
 
 //                                ANOTHER VERSION "BINARY SEARCH" 
 
+// #include <iostream>
+// using namespace std;
+// int main(){
+//   system("cls");
+// int e,mid,s;
+// int arr[8]={1,3,3,5,7,9,19,29};
+// s=0;
+// e=8;
+// mid = (s+e)/2;
+// int key;
+// cout<<"enter the key to be found: ";
+// cin>>key;
+// for(int i=s;i<e;i++){
+// if (arr[mid] == key){
+//   cout<<"key found in the mid";
+//   // return key;
+// }
+// }
+// if(key>arr[mid]){
+//   for(int i =mid+1; i<e;i++){
+//     if (arr[i]==key){
+//       cout<<"key found\n";
+//         cout<<"key "<<arr[i]<<"found at this pos:"<<i;
+//           return 0;
+//     }
+//   }
+// }
+// if(key<arr[mid]){
+//   for(int i=s;i<mid;i++){
+//     if (arr[i]==key){
+//        cout<<"key found\n";
+//        cout<<"key "<<arr[i]<<"found at this pos:"<<i;
+//            return 0;
+//     }
+//   }
+
+// }
+
+//   cout<<"key not found";
+
+
+
+// }
+
+
+
+//                                            SIMPLE SORTING ALGO
 #include <iostream>
 using namespace std;
-int main(){
-  system("cls");
-int e,mid,s;
-int arr[8]={1,3,3,5,7,9,19,29};
-s=0;
-e=8;
-mid = (s+e)/2;
-int key;
-cout<<"enter the key to be found: ";
-cin>>key;
-for(int i=s;i<e;i++){
-if (arr[mid] == key){
-  cout<<"key found in the mid";
-  // return key;
-}
-}
-if(key>arr[mid]){
-  for(int i =mid+1; i<e;i++){
-    if (arr[i]==key){
-      cout<<"key found\n";
-        cout<<"key "<<arr[i]<<"found at this pos:"<<i;
-          return 0;
-    }
+int main (){
+int arr [6]={4,2,5,0,7,3};
+  int temp;
+ for(int i=0; i<6; i++){
+  for (int j=i+1;j<6;j++){
+   if (arr[i]>arr[j]){
+    temp=arr[i];
+    arr[i]=arr[j];
+    arr[j]=temp;
+  
+   }
+
+
   }
-}
-if(key<arr[mid]){
-  for(int i=s;i<mid;i++){
-    if (arr[i]==key){
-       cout<<"key found\n";
-       cout<<"key "<<arr[i]<<"found at this pos:"<<i;
-           return 0;
-    }
-  }
+ }
 
-}
-
-  cout<<"key not found";
-
-
-
+ for(int i =0;i<6;i++){
+  cout<<arr[i]<<" ";
+ }
 }
