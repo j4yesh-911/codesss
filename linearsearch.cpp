@@ -101,25 +101,52 @@
 
 
 //                                            SIMPLE SORTING ALGO
+// #include <iostream>
+// using namespace std;
+// int main (){
+// int arr [6]={4,2,5,0,7,3};
+//   int temp;
+//  for(int i=0; i<6; i++){
+//   for (int j=i+1;j<6;j++){
+//    if (arr[i]>arr[j]){
+//     temp=arr[i];
+//     arr[i]=arr[j];
+//     arr[j]=temp;
+  
+//    }
+
+
+//   }
+//  }
+
+//  for(int i =0;i<6;i++){
+//   cout<<arr[i]<<" ";
+//  }
+// }
+
+
+
+
+//                                               BUBBLE SORT 
 #include <iostream>
 using namespace std;
-int main (){
-int arr [6]={4,2,5,0,7,3};
-  int temp;
- for(int i=0; i<6; i++){
-  for (int j=i+1;j<6;j++){
-   if (arr[i]>arr[j]){
-    temp=arr[i];
-    arr[i]=arr[j];
-    arr[j]=temp;
-  
-   }
-
-
-  }
+int main(){
+  int n ;
+  cout<<"enter the number of ele in arr: ";
+  cin>>n;
+ int arr[n];
+ cout<<"enter the elements of arr: ";
+ for(int i =0;i<n;i++){
+  cin>>arr[i];
  }
-
- for(int i =0;i<6;i++){
-  cout<<arr[i]<<" ";
+for(int i =0; i<n;i++){
+  for(int j=0; j<n-i-1; j++){
+    if(arr[j]>arr[j+1]){
+      swap(arr[j],arr[j+1]);
+    }
+  }
+}
+ for (int i =0 ;i<n;i++){
+cout<< arr[i];
  }
 }
