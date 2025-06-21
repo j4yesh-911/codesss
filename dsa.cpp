@@ -128,25 +128,87 @@
 
 
 //                                               BUBBLE SORT 
+// #include <iostream>
+// using namespace std;
+// int main(){
+//   int n ;
+//   cout<<"enter the number of ele in arr: ";
+//   cin>>n;
+//  int arr[n];
+//  cout<<"enter the elements of arr: ";
+//  for(int i =0;i<n;i++){
+//   cin>>arr[i];
+//  }
+// for(int i =0; i<n-1;i++){
+//   for(int j=0; j<n-i-1; j++){
+//     if(arr[j]>arr[j+1]){
+//       swap(arr[j],arr[j+1]);
+//     }
+//   }
+// }
+//  for (int i =0 ;i<n;i++){
+// cout<< arr[i];
+//  }
+// }
+
+
+
+//                                            INSERTION SORT
+  
+
+// *USING FOR LOOP*
+// #include<iostream>
+// using namespace std;
+// int main(){
+// int n; 
+// cout<<"enter the number of elements: ";
+// cin>>n;
+// int arr[n];
+// cout<<"enter the elements: ";
+// for(int i=0;i<n;i++){
+//   cin>>arr[i];
+// }
+// for(int i =1 ; i<n;i++){
+//   int key =arr[i];
+//   int j;
+//   for( j =i-1 ; j>=0 && arr[j]>key;j-- ){
+//     arr[j+1]=arr[j];
+//   }
+//      arr[j+1]=key;
+// }
+// for(int i =0; i<n;i++){
+//   cout<<arr[i]<<" ";
+// }
+// return 0;
+// }
+
+
+
+//*USING WHILE LOOP* 
 #include <iostream>
+typedef int aja;
+#define jbtk while 
 using namespace std;
 int main(){
-  int n ;
-  cout<<"enter the number of ele in arr: ";
+  int n;
+  cout<<"enter the number of elements: ";
   cin>>n;
- int arr[n];
- cout<<"enter the elements of arr: ";
- for(int i =0;i<n;i++){
+  int arr[n];
+  cout <<"enter the elements: ";
+ for(int i=0; i<n;i++){
   cin>>arr[i];
- }
-for(int i =0; i<n;i++){
-  for(int j=0; j<n-i-1; j++){
-    if(arr[j]>arr[j+1]){
-      swap(arr[j],arr[j+1]);
-    }
-  }
 }
- for (int i =0 ;i<n;i++){
-cout<< arr[i];
+  for(int i=1;i<n;i++){
+  int key=arr[i];
+ int j =i-1;
+ jbtk(j>=0&&arr[j]>key){
+  arr[j+1]=arr[j];
+  j--;
  }
+ arr[j+1]=key;
+ }
+ for(aja o =0; o<n;o++){
+  cout<<arr[o]<<" ";
+ }
+
 }
