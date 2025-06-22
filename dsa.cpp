@@ -185,30 +185,62 @@
 
 
 //*USING WHILE LOOP* 
-#include <iostream>
-typedef int aja;
-#define jbtk while 
-using namespace std;
-int main(){
-  int n;
-  cout<<"enter the number of elements: ";
-  cin>>n;
-  int arr[n];
-  cout <<"enter the elements: ";
- for(int i=0; i<n;i++){
-  cin>>arr[i];
-}
-  for(int i=1;i<n;i++){
-  int key=arr[i];
- int j =i-1;
- jbtk(j>=0&&arr[j]>key){
-  arr[j+1]=arr[j];
-  j--;
- }
- arr[j+1]=key;
- }
- for(aja o =0; o<n;o++){
-  cout<<arr[o]<<" ";
- }
+// #include <iostream>
+// typedef int aja;
+// #define jbtk while 
+// using namespace std;
+// int main(){
+//   int n;
+//   cout<<"enter the number of elements: ";
+//   cin>>n;
+//   int arr[n];
+//   cout <<"enter the elements: ";
+//  for(int i=0; i<n;i++){
+//   cin>>arr[i];
+// }
+//   for(int i=1;i<n;i++){
+//   int key=arr[i];
+//  int j =i-1;
+//  jbtk(j>=0&&arr[j]>key){
+//   arr[j+1]=arr[j];
+//   j--;
+//  }
+//  arr[j+1]=key;
+//  }
+//  for(aja o =0; o<n;o++){
+//   cout<<arr[o]<<" ";
+//  }
 
+// }
+
+//                                 SELCTION SORT 
+
+#include<iostream>
+using namespace std;
+int main (){
+  int n;
+
+  cout<<"enter the number of ele: ";
+  cin>>n;
+
+  int arr[n];
+
+  cout<<"enter the ele: ";
+  for(int i=0; i<n;i++){
+    cin>>arr[i];
+  }
+
+for(int i =0; i<n-1; i++){
+  int minindex=i;
+  for(int j =i+1; j<n;j++){
+    if(arr[j]<arr[minindex]){
+ minindex=j;}
+  }
+  swap(arr[i],arr[minindex]);
+}
+
+for(int i=0; i<n; i++){
+  cout<<arr[i];
+}
+return 0;
 }
