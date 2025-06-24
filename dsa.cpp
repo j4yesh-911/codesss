@@ -215,32 +215,97 @@
 
 //                                 SELCTION SORT 
 
+// #include<iostream>
+// using namespace std;
+// int main (){
+//   int n;
+
+//   cout<<"enter the number of ele: ";
+//   cin>>n;
+
+//   int arr[n];
+
+//   cout<<"enter the ele: ";
+//   for(int i=0; i<n;i++){
+//     cin>>arr[i];
+//   }
+
+// for(int i =0; i<n-1; i++){
+//   int minindex=i;
+//   for(int j =i+1; j<n;j++){
+//     if(arr[j]<arr[minindex]){
+//  minindex=j;}
+//   }
+//   swap(arr[i],arr[minindex]);
+// }
+
+// for(int i=0; i<n; i++){
+//   cout<<arr[i];
+// }
+// return 0;
+// }
+
+
+
+
+//                                             MERGE SORT 
+
 #include<iostream>
 using namespace std;
-int main (){
-  int n;
+void merge(int arr[],int l,int mid,int end){
+    int n1=mid-l+1;  
+    // int n1=mid+1;  
+    int n2= end-mid;  
+    // int n2= mid; 
+    int a[n1];
+    int b[n2];
 
-  cout<<"enter the number of ele: ";
-  cin>>n;
-
-  int arr[n];
-
-  cout<<"enter the ele: ";
-  for(int i=0; i<n;i++){
-    cin>>arr[i];
-  }
-
-for(int i =0; i<n-1; i++){
-  int minindex=i;
-  for(int j =i+1; j<n;j++){
-    if(arr[j]<arr[minindex]){
- minindex=j;}
-  }
-  swap(arr[i],arr[minindex]);
+for(int i=0;i<n1;i++){
+    a[i]=arr[l+i];
 }
 
-for(int i=0; i<n; i++){
-  cout<<arr[i];
+for(int i=0;i<n2;i++ ){
+    b[i]=arr[mid+1+i];
 }
-return 0;
+int i=0;int j=0;int k=l;
+
+while(i<n1 && j<n2){
+    if(a[i]<b[j]){
+        arr[k]=a[i];
+        k++;
+        i++;
+    }
+    else{
+        arr[k]=b[j];
+        k++;
+        j++;
+
+    }
+    
 }
+while(i<n1){
+    arr[k]=a[i];
+    k++;
+    i++;
+}
+while(j<n2){
+    arr[k]=b[j];
+    k++;
+    j++;
+
+}
+}
+void mergesort(int arr[],int l,int end){
+if(l<end)
+{
+    int mid=(l+end)/2;
+    mergesort(arr,l,mid);
+    mergesort(arr,mid+1,end);
+    merge(arr,l,mid,end);
+}}
+int main(){
+ int arr[]={5,4,3,2,1};
+ mergesort (arr,0,4);
+ for(int i=0;i<5;i++){
+    cout<<arr[i]<<" ";
+ }}
