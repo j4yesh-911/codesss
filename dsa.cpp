@@ -250,62 +250,102 @@
 
 //                                             MERGE SORT 
 
-#include<iostream>
-using namespace std;
-void merge(int arr[],int l,int mid,int end){
-    int n1=mid-l+1;  
-    // int n1=mid+1;  
-    int n2= end-mid;  
-    // int n2= mid; 
-    int a[n1];
-    int b[n2];
+// #include<iostream>
+// using namespace std;
+// void merge(int arr[],int l,int mid,int end){
+//     int n1=mid-l+1;  
+//     // int n1=mid+1;  
+//     int n2= end-mid;  
+//     // int n2= mid; 
+//     int a[n1];
+//     int b[n2];
 
-for(int i=0;i<n1;i++){
-    a[i]=arr[l+i];
-}
+// for(int i=0;i<n1;i++){
+//     a[i]=arr[l+i];
+// }
 
-for(int i=0;i<n2;i++ ){
-    b[i]=arr[mid+1+i];
-}
-int i=0;int j=0;int k=l;
+// for(int i=0;i<n2;i++ ){
+//     b[i]=arr[mid+1+i];
+// }
+// int i=0;int j=0;int k=l;
 
-while(i<n1 && j<n2){
-    if(a[i]<b[j]){
-        arr[k]=a[i];
-        k++;
-        i++;
-    }
-    else{
-        arr[k]=b[j];
-        k++;
-        j++;
+// while(i<n1 && j<n2){
+//     if(a[i]<b[j]){
+//         arr[k]=a[i];
+//         k++;
+//         i++;
+//     }
+//     else{
+//         arr[k]=b[j];
+//         k++;
+//         j++;
 
-    }
+//     }
     
+// }
+// while(i<n1){
+//     arr[k]=a[i];
+//     k++;
+//     i++;
+// }
+// while(j<n2){
+//     arr[k]=b[j];
+//     k++;
+//     j++;
+
+// }
+// }
+// void mergesort(int arr[],int l,int end){
+// if(l<end)
+// {
+//     int mid=(l+end)/2;
+//     mergesort(arr,l,mid);
+//     mergesort(arr,mid+1,end);
+//     merge(arr,l,mid,end);
+// }}
+// int main(){
+//  int arr[]={5,4,3,2,1,0};
+//  mergesort (arr,0,5);
+//  for(int i=0;i<6;i++){
+//     cout<<arr[i]<<" ";
+//  }}
+
+
+
+//                                               QUICK SORT 
+#include <iostream>
+using namespace std;
+void swap(int arr[],int i , int j){
+    // int temp=arr[i];
+    // arr[i]=arr[j];
+    // arr[j]=temp;
+    swap(arr[i],arr[j]);
 }
-while(i<n1){
-    arr[k]=a[i];
-    k++;
-    i++;
+ int part(int arr[],int l,int r){
+    int pivot=arr[r];
+    int i=l-1;
+    for(int j=l ; j<r;j++){
+        if(arr[j]< pivot){
+            i++;
+            swap(arr,i,j);
+        }
+    }
+    swap(arr,i+1,r);
+    return i;
 }
-while(j<n2){
-    arr[k]=b[j];
-    k++;
-    j++;
+void quicksort(int arr[],int l, int r){
+    if(l<r){
+        int pi= part(arr,l,r);
+        quicksort(arr,l,pi-1);
+        quicksort(arr,pi+1,r);
+    }
+}
+int main(){
+    // int n;
+    int arr[5]={0,5,6,52,7};
+    quicksort(arr,0,4);
+    for(int i=0;i<5;i++){
+    cout<<arr[i]<<endl;
+    }
 
 }
-}
-void mergesort(int arr[],int l,int end){
-if(l<end)
-{
-    int mid=(l+end)/2;
-    mergesort(arr,l,mid);
-    mergesort(arr,mid+1,end);
-    merge(arr,l,mid,end);
-}}
-int main(){
- int arr[]={5,4,3,2,1};
- mergesort (arr,0,4);
- for(int i=0;i<5;i++){
-    cout<<arr[i]<<" ";
- }}
