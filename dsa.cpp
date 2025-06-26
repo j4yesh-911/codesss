@@ -100,7 +100,7 @@
 
 
 
-//                                            SIMPLE SORTING ALGO
+//                                            SIMPlE SORTING AlGO
 // #include <iostream>
 // using namespace std;
 // int main (){
@@ -127,7 +127,7 @@
 
 
 
-//                                               BUBBLE SORT 
+//                                               BUBBlE SORT 
 // #include <iostream>
 // using namespace std;
 // int main(){
@@ -156,7 +156,7 @@
 //                                            INSERTION SORT
   
 
-// *USING FOR LOOP*
+// *USING FOR lOOP*
 // #include<iostream>
 // using namespace std;
 // int main(){
@@ -184,7 +184,7 @@
 
 
 
-//*USING WHILE LOOP* 
+//*USING WHIlE lOOP* 
 // #include <iostream>
 // typedef int aja;
 // #define jbtk while 
@@ -213,7 +213,7 @@
 
 // }
 
-//                                 SELCTION SORT 
+//                                 SElCTION SORT 
 
 // #include<iostream>
 // using namespace std;
@@ -252,8 +252,8 @@
 
 // #include<iostream>
 // using namespace std;
-// void merge(int arr[],int l,int mid,int end){
-//     int n1=mid-l+1;  
+// void merge(int arr[],int start,int mid,int end){
+//     int n1=mid-start+1;  
 //     // int n1=mid+1;  
 //     int n2= end-mid;  
 //     // int n2= mid; 
@@ -261,13 +261,13 @@
 //     int b[n2];
 
 // for(int i=0;i<n1;i++){
-//     a[i]=arr[l+i];
+//     a[i]=arr[start+i];
 // }
 
 // for(int i=0;i<n2;i++ ){
 //     b[i]=arr[mid+1+i];
 // }
-// int i=0;int j=0;int k=l;
+// int i=0;int j=0;int k=start;
 
 // while(i<n1 && j<n2){
 //     if(a[i]<b[j]){
@@ -295,13 +295,13 @@
 
 // }
 // }
-// void mergesort(int arr[],int l,int end){
-// if(l<end)
+// void mergesort(int arr[],int start,int end){
+// if(start<end)
 // {
-//     int mid=(l+end)/2;
-//     mergesort(arr,l,mid);
+//     int mid=(start+end)/2;
+//     mergesort(arr,start,mid);
 //     mergesort(arr,mid+1,end);
-//     merge(arr,l,mid,end);
+//     merge(arr,start,mid,end);
 // }}
 // int main(){
 //  int arr[]={5,4,3,2,1,0};
@@ -321,23 +321,23 @@ void swap(int arr[],int i , int j){
     // arr[j]=temp;
     swap(arr[i],arr[j]);
 }
- int part(int arr[],int l,int r){
-    int pivot=arr[r];
-    int i=l-1;
-    for(int j=l ; j<r;j++){
+ int part(int arr[],int start,int end){
+    int pivot=arr[end];
+    int i=start-1;
+    for(int j=start ; j<end;j++){
         if(arr[j]< pivot){
             i++;
             swap(arr,i,j);
         }
     }
-    swap(arr,i+1,r);
+    swap(arr,i+1,end);
     return i;
 }
-void quicksort(int arr[],int l, int r){
-    if(l<r){
-        int pi= part(arr,l,r);
-        quicksort(arr,l,pi-1);
-        quicksort(arr,pi+1,r);
+void quicksort(int arr[],int start, int end){
+    if(start<end){
+        int pi= part(arr,start,end);
+        quicksort(arr,start,pi-1);
+        quicksort(arr,pi+1,end);
     }
 }
 int main(){
@@ -347,5 +347,4 @@ int main(){
     for(int i=0;i<5;i++){
     cout<<arr[i]<<endl;
     }
-
 }
