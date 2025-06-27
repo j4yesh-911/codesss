@@ -313,38 +313,106 @@
 
 
 //                                               QUICK SORT 
+// #include <iostream>
+// using namespace std;
+// void swap(int arr[],int i , int j){
+//     // int temp=arr[i];
+//     // arr[i]=arr[j];
+//     // arr[j]=temp;
+//     swap(arr[i],arr[j]);
+// }
+//  int part(int arr[],int start,int end){
+//     int pivot=arr[end];
+//     int i=start-1;
+//     for(int j=start ; j<end;j++){
+//         if(arr[j]< pivot){
+//             i++;
+//             swap(arr,i,j);
+//         }
+//     }
+//     swap(arr,i+1,end);
+//     return i;
+// }
+// void quicksort(int arr[],int start, int end){
+//     if(start<end){
+//         int pi= part(arr,start,end);
+//         quicksort(arr,start,pi-1);
+//         quicksort(arr,pi+1,end);
+//     }
+// }
+// int main(){
+//     // int n;
+//     int arr[5]={0,5,6,52,7};
+//     quicksort(arr,0,4);
+//     for(int i=0;i<5;i++){
+//     cout<<arr[i]<<endl;
+//     }
+// }
+
+
+//                               STACK 
+
 #include <iostream>
 using namespace std;
-void swap(int arr[],int i , int j){
-    // int temp=arr[i];
-    // arr[i]=arr[j];
-    // arr[j]=temp;
-    swap(arr[i],arr[j]);
-}
- int part(int arr[],int start,int end){
-    int pivot=arr[end];
-    int i=start-1;
-    for(int j=start ; j<end;j++){
-        if(arr[j]< pivot){
-            i++;
-            swap(arr,i,j);
-        }
+
+class stack{
+int n = 2;
+int arr[2];
+int top =-1;
+
+public:
+ void push (int x){
+    if(top >= n-1){
+        cout<<"stack overflow    \n ";
+          return;
     }
-    swap(arr,i+1,end);
-    return i;
-}
-void quicksort(int arr[],int start, int end){
-    if(start<end){
-        int pi= part(arr,start,end);
-        quicksort(arr,start,pi-1);
-        quicksort(arr,pi+1,end);
+//  ++top;
+  arr[++top]=x;
+ }
+
+ void pop(){
+    if(top ==-1){
+        cout<<"stack underflow, no ele to pop    \n";
+          return;
     }
+    top--;
+    cout<<"\n";
+  
 }
+
+int Top(){
+    if(top == -1){
+        cout<<"no ele on top    \n";
+        return -1;
+    }
+     cout<<"\n";
+    return arr [top];
+        cout<<"\n";
+}
+
+int display(){
+    // if(top>-1){
+     cout<<"\n";
+    for(int i =0; i<=top; i++){
+        cout<<arr[i]<<" \n";
+    }
+    // return 0;
+}
+// cout<<"stack empty ";
+// }
+};
+ 
 int main(){
-    // int n;
-    int arr[5]={0,5,6,52,7};
-    quicksort(arr,0,4);
-    for(int i=0;i<5;i++){
-    cout<<arr[i]<<endl;
-    }
+    system("CLS");
+    stack st;
+    st.push(10);
+    st.push(20);
+    st.display();
+    st.push(30);
+    cout<< st.Top();
+    st.pop();
+    cout<< st.Top();
+    st.display();
+    st.pop();
+    st.pop();
 }
