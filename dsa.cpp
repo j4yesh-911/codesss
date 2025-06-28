@@ -403,16 +403,87 @@ int display(){
 };
  
 int main(){
-    system("CLS");
+    // system("CLS");
     stack st;
-    st.push(10);
-    st.push(20);
-    st.display();
-    st.push(30);
-    cout<< st.Top();
-    st.pop();
-    cout<< st.Top();
-    st.display();
-    st.pop();
-    st.pop();
+ int choise , value;
+
+ 
+    do{
+  cout<<"1 push\n";
+  cout<<"2 pop\n";
+  cout<<"3 peak\n";
+  cout<<"4 display\n";
+  cout<<"5 exit\n";
+  cout <<"enter your choise: ";
+  cin >>choise;
+switch(choise){
+  case 1:
+  cout<<"enter the value to be pushed: ";
+  cin>>value;
+  st.push(value);
+   break;
+
+ case 2: 
+ st.pop();
+ if (value!=-1){
+    cout<<"value poped";
+ }
+  break;
+
+ case 3:
+ if(value!=-1){
+    cout<<"the value on top is: ";
+ }
+ cout<< st.Top();
+  break;
+
+ case 4:
+ if(value!=-1){
+    cout<<"the values in stack are: ";
+ }
+ st.display();
+  break;
+
+ case 5:
+ cout<< "EXIT";
+ break;
+
+ default:
+ cout<<"invalid";
+ break;
+  } }
+ while (choise <5);
+
+ 
+ return 0;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    // st.push(10);
+    // st.push(20);
+    // st.display();
+    // st.push(30);
+    // cout<< st.Top();
+    // st.pop();
+    // cout<< st.Top();
+    // st.display();
+    // st.pop();
+    // st.pop();
