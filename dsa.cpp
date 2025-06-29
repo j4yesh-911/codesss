@@ -352,138 +352,150 @@
 
 //                               STACK 
 
+// #include <iostream>
+// using namespace std;
+
+// class stack{
+// int n = 2;
+// int arr[2];
+// int top =-1;
+
+// public:
+//  void push (int x){
+//     if(top >= n-1){
+//         cout<<"stack overflow    \n ";
+//           return;
+//     }
+// //  ++top;
+//   arr[++top]=x;
+//  }
+
+//  void pop(){
+//     if(top ==-1){
+//         cout<<"stack underflow, no ele to pop    \n";
+//           return;
+//     }
+//     top--;
+//     cout<<"\n";
+  
+// }
+
+// int Top(){
+//     if(top == -1){
+//         cout<<"no ele on top    \n";
+//         return -1;
+//     }
+//      cout<<"\n";
+//     return arr [top];
+//         cout<<"\n";
+// }
+
+// int display(){
+//     // if(top>-1){
+//      cout<<"\n";
+//     for(int i =0; i<=top; i++){
+//         cout<<arr[i]<<" \n";
+//     }
+//     // return 0;
+// }
+// // cout<<"stack empty ";
+// // }
+// };
+ 
+// int main(){
+//     // system("CLS");
+//     stack st;
+//  int choise , value;
+
+ 
+//     do{
+//   cout<<"1 push\n";
+//   cout<<"2 pop\n";
+//   cout<<"3 peak\n";
+//   cout<<"4 display\n";
+//   cout<<"5 exit\n";
+//   cout <<"enter your choise: ";
+//   cin >>choise;
+// switch(choise){
+//   case 1:
+//   cout<<"enter the value to be pushed: ";
+//   cin>>value;
+//   st.push(value);
+//    break;
+
+//  case 2: 
+//  st.pop();
+//  if (value!=-1){
+//     cout<<"value poped";
+//  }
+//   break;
+
+//  case 3:
+//  if(value!=-1){
+//     cout<<"the value on top is: ";
+//  }
+//  cout<< st.Top();
+//   break;
+
+//  case 4:
+//  if(value!=-1){
+//     cout<<"the values in stack are: ";
+//  }
+//  st.display();
+//   break;
+
+//  case 5:
+//  cout<< "EXIT";
+//  break;
+
+//  default:
+//  cout<<"invalid";
+//  break;
+//   } }
+//  while (choise <5);
+
+ 
+//  return 0;
+// }
+
+
+//                                     QUEUE
+
 #include <iostream>
 using namespace std;
-
-class stack{
-int n = 2;
-int arr[2];
-int top =-1;
-
+ class queue{
+  int n=2;
+  int arr[2];
+  int x; 
+ int front=0;
+int rear=0;
 public:
- void push (int x){
-    if(top >= n-1){
-        cout<<"stack overflow    \n ";
-          return;
-    }
-//  ++top;
-  arr[++top]=x;
- }
-
- void pop(){
-    if(top ==-1){
-        cout<<"stack underflow, no ele to pop    \n";
-          return;
-    }
-    top--;
-    cout<<"\n";
-  
+int enqueue(int x){
+  if(rear>=n){
+cout<<"overflow";
+  }
+  arr[rear++]=x;
 }
-
-int Top(){
-    if(top == -1){
-        cout<<"no ele on top    \n";
-        return -1;
-    }
-     cout<<"\n";
-    return arr [top];
-        cout<<"\n";
+int dequeue(){
+  if(front ==0 && rear==0){
+    cout<<"under flow";
+    return -1;
+  }
+  front ++;
 }
 
 int display(){
-    // if(top>-1){
-     cout<<"\n";
-    for(int i =0; i<=top; i++){
-        cout<<arr[i]<<" \n";
-    }
-    // return 0;
+  for(int i= front;i<rear;i++){
+    cout<<arr[i]<<" ";
+  }
 }
-// cout<<"stack empty ";
-// }
-};
- 
-int main(){
-    // system("CLS");
-    stack st;
- int choise , value;
-
- 
-    do{
-  cout<<"1 push\n";
-  cout<<"2 pop\n";
-  cout<<"3 peak\n";
-  cout<<"4 display\n";
-  cout<<"5 exit\n";
-  cout <<"enter your choise: ";
-  cin >>choise;
-switch(choise){
-  case 1:
-  cout<<"enter the value to be pushed: ";
-  cin>>value;
-  st.push(value);
-   break;
-
- case 2: 
- st.pop();
- if (value!=-1){
-    cout<<"value poped";
+ };
+ int main(){
+  queue c;
+  c.enqueue(10);
+  c.enqueue(20);
+  c.enqueue(30);
+  c.display();
+  c.dequeue();
+  c.display();
  }
-  break;
-
- case 3:
- if(value!=-1){
-    cout<<"the value on top is: ";
- }
- cout<< st.Top();
-  break;
-
- case 4:
- if(value!=-1){
-    cout<<"the values in stack are: ";
- }
- st.display();
-  break;
-
- case 5:
- cout<< "EXIT";
- break;
-
- default:
- cout<<"invalid";
- break;
-  } }
- while (choise <5);
-
- 
- return 0;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    // st.push(10);
-    // st.push(20);
-    // st.display();
-    // st.push(30);
-    // cout<< st.Top();
-    // st.pop();
-    // cout<< st.Top();
-    // st.display();
-    // st.pop();
-    // st.pop();

@@ -1,32 +1,31 @@
-#include<iostream>
-using namespace std;
-int main (){
-  int n;
+// #include <iostream>
+// using namespace std;
+// int pivo(int arr [],int start, int end){
+// int piv = arr[end];
+// int i=start-1;
+// for(int j =start; j<end;j++){
+//   if(arr[j]<piv){
+//       i++;
+//  swap(arr[i],arr[j]);
+//       }
+//   }
 
-  cout<<"enter the number of ele: ";
-  cin>>n;
+//  swap(arr [i+1], arr[end]);
+//   return i+1;
 
-  int arr[n];
 
-  cout<<"enter the ele: ";
-  for(int i=0; i<n;i++){
-    cin>>arr[i];
-  }
-
-for(int i =0; i<n-1; i++){
-  int minindex=i;
-  for(int j =i+1; j<n;j++){
-    if(arr[j]<arr[minindex]){
- minindex=j;}
-  }
-  swap(arr[i],arr[minindex]);
-// int temp = arr[i];
-// arr[i]=arr[minindex];
-// arr[minindex]=temp;
-}
-
-for(int i=0; i<n; i++){
-  cout<<arr[i];
-}
-return 0;
-}
+// }
+// void quicksort(int arr[], int start, int end){
+//   if(start<end){
+// int piv= pivo(arr,start,end);
+//   quicksort(arr, start , piv-1);
+//   quicksort(arr,piv+1,end);
+//   }
+// }
+// int main(){
+//   int arr[5]={5,4,3,2,1};
+//   quicksort(arr,0,4);
+//   for (int i =0; i<5;i++){
+//     cout<<arr[i];
+//   }
+// }
