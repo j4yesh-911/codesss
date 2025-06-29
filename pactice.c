@@ -273,6 +273,8 @@
 // }
 
 
+//                            ENUM AND "!"
+
 
 #include <stdio.h>
 int main (){
@@ -282,9 +284,14 @@ int main (){
 
   
         enum day today= monday;
-    printf("%d",today);
+    // printf("%d",today);
 
 char esc ='\\';
 float e = 1.0e-5;
-printf("%f",e);
+// printf("%f",e);
+int n;
+!n;
+printf("%d",!n);
+n=0;
+printf("%d",!n);
 }
