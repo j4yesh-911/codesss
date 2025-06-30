@@ -461,41 +461,122 @@
 
 //                                     QUEUE
 
+// #include <iostream>
+// using namespace std;
+//  class queue{
+//   int n=2;
+//   int arr[2];
+//   int x; 
+//  int front=0;
+// int rear=0;
+// public:
+// int enqueue(int x){
+//   if(rear>=n){
+// cout<<"overflow";
+//   }
+//   arr[rear++]=x;
+// }
+// int dequeue(){
+//   if(front ==0 && rear==0){
+//     cout<<"under flow";
+//     return -1;
+//   }
+//   front ++;
+// }
+
+// int display(){
+//   for(int i= front;i<rear;i++){
+//     cout<<arr[i]<<" \n";
+//   }
+// }
+//  };
+//  int main(){
+//   queue c;
+//   c.enqueue(10);
+//   c.enqueue(20);
+//   c.enqueue(30);
+//   c.display();
+//   c.dequeue();
+//   c.display();
+//  }
+
+
+
+
 #include <iostream>
 using namespace std;
- class queue{
-  int n=2;
+class queue{
+ int n=2;
   int arr[2];
-  int x; 
- int front=0;
-int rear=0;
+  int front =0;
+  int rear =0;
 public:
-int enqueue(int x){
-  if(rear>=n){
-cout<<"overflow";
+  void enqueue (int x){
+    if(rear>=n){
+        cout << "\noverflow\n";
+        // return;
+    }
+    else{
+    arr[rear++]=x;
   }
-  arr[rear++]=x;
+  }
+
+  void dequeue(){
+    if(front==-1 && rear==-1){
+      cout<<"\nunderflow\n";
+      // return;
+    }
+    else{
+    front++;
+  }
+  }
+
+void display(){
+  for(int i=front;i<rear;i++){
+    cout<<arr[i]<<"\n";
+  }
+  return ;
 }
-int dequeue(){
-  if(front ==0 && rear==0){
-    cout<<"under flow";
-    return -1;
+  
+};
+int main(){
+  queue c;
+  int choise, value;
+
+do{
+  cout<<"1.enqueue \n";
+  cout<<"2.dequeue \n";
+  cout<<"3.display \n";
+  cout<<"4.EXIT \n";
+  cout<<"enter yout choise: ";
+  cin>>choise;
+
+  switch(choise){
+    case 1:
+    cout<<"enter the value to be enqueue: ";
+    cin>>value;
+    c.enqueue(value);
+    break;
+
+    case 2:
+    c.dequeue();
+      cout<<"\nvalue dequeued\n";
+    break;
+
+    case 3:
+    cout<<"the elements in queue are : ";
+    c.display();
+    break;
+
+    case 4:
+     cout<<"EXIT";
+     break;
+
+    default:
+    cout<<"INVAILED H BKL";
   }
-  front ++;
+
 }
 
-int display(){
-  for(int i= front;i<rear;i++){
-    cout<<arr[i]<<" ";
-  }
+  while(choise<4);
 }
- };
- int main(){
-  queue c;
-  c.enqueue(10);
-  c.enqueue(20);
-  c.enqueue(30);
-  c.display();
-  c.dequeue();
-  c.display();
- }

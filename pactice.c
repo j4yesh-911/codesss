@@ -233,14 +233,16 @@
 
 //                                           ASCII
 
-// #include<stdio.h>
-// int main(){
-//     system ("cls");
-//     // for(int n= 33; n<255;n++){
-//     // printf("%c",n);
-// //}
+#include<stdio.h>
+int main(){
+    system ("cls");
+    for(int n= 33; n<253;n++){
+    printf("%c",n);
+}
 //     int a=7;
 //  printf("%c",a);
+}
+
 //     
 
 
@@ -248,11 +250,14 @@
 
 //                                            BEEP
 
-// #include <windows.h>
-// int main() {
-//     Beep(250, 3000); 
-//     return 0;
-// }
+#include <windows.h>
+int main() {
+    Beep(170, 3000); 
+    Sleep(2000);
+     Beep(170, 3000); 
+    
+    return 0;
+}
 
 
 
@@ -276,22 +281,22 @@
 //                            ENUM AND "!"
 
 
-#include <stdio.h>
-int main (){
-    enum day{
-        sunday ,monday,tuesday,wednesday,thursay,friday,saturday
-    };
+// #include <stdio.h>
+// int main (){
+//     enum day{
+//         sunday ,monday,tuesday,wednesday,thursay,friday,saturday
+//     };
 
   
-        enum day today= monday;
-    // printf("%d",today);
+//         enum day today= monday;
+//     // printf("%d",today);
 
-char esc ='\\';
-float e = 1.0e-5;
-// printf("%f",e);
-int n;
-!n;
-printf("%d",!n);
-n=0;
-printf("%d",!n);
-}
+// char esc ='\\';
+// float e = 1.0e-5;
+// // printf("%f",e);
+// int n;
+// !n;
+// printf("%d",!n);
+// n=0;
+// printf("%d",!n);
+// }

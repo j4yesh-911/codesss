@@ -1,10 +1,9 @@
+#include<stdio.h>
 int main(){
-    int strlen(char s[]){
-        int i;
-        i=0;
-        while (s[i]!= '0')
-        ++i;
-        return i;
-    
+    system ("cls");
+    for(int n= 33; n<253;n++){
+    printf("%c",n);
 }
+//     int a=7;
+//  printf("%c",a);
 }
