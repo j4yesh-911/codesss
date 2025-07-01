@@ -52,7 +52,7 @@
 //     return 0;
 // }
 
-//                                ANOTHER VERSION "BINARY SEARCH" 
+//                                ANOTHER VERSION "SEARCHING" 
 
 // #include <iostream>
 // using namespace std;
@@ -503,80 +503,158 @@
 
 
 
+// #include <iostream>
+// using namespace std;
+// class queue{
+//  int n=2;
+//   int arr[2];
+//   int front =0;
+//   int rear =0;
+// public:
+//   void enqueue (int x){
+//     if(rear>=n){
+//         cout << "\noverflow\n";
+//         // return;
+//     }
+//     else{
+//     arr[rear++]=x;
+//   }
+//   }
+
+//   void dequeue(){
+//     if(front==-1 && rear==-1){
+//       cout<<"\nunderflow\n";
+//       // return;
+//     }
+//     else{
+//     front++;
+//   }
+//   }
+
+// void display(){
+//   for(int i=front;i<rear;i++){
+//     cout<<arr[i]<<"\n";
+//   }
+//   return ;
+// }
+  
+// };
+// int main(){
+//   queue c;
+//   int choise, value;
+
+// do{
+//   cout<<"1.enqueue \n";
+//   cout<<"2.dequeue \n";
+//   cout<<"3.display \n";
+//   cout<<"4.EXIT \n";
+//   cout<<"enter yout choise: ";
+//   cin>>choise;
+
+//   switch(choise){
+//     case 1:
+//     cout<<"enter the value to be enqueue: ";
+//     cin>>value;
+//     c.enqueue(value);
+//     break;
+
+//     case 2:
+//     c.dequeue();
+//       cout<<"\nvalue dequeued\n";
+//     break;
+
+//     case 3:
+//     cout<<"the elements in queue are : ";
+//     c.display();
+//     break;
+
+//     case 4:
+//      cout<<"EXIT";
+//      break;
+
+//     default:
+//     cout<<"INVAILED H BKL";
+//   }
+
+// }
+
+//   while(choise<4);
+// }
+
+
+
+//                                             BANK SYSTEM
 #include <iostream>
 using namespace std;
-class queue{
- int n=2;
-  int arr[2];
-  int front =0;
-  int rear =0;
+class BANK{
+  int bal=0;
+
 public:
-  void enqueue (int x){
-    if(rear>=n){
-        cout << "\noverflow\n";
-        // return;
-    }
-    else{
-    arr[rear++]=x;
-  }
-  }
 
-  void dequeue(){
-    if(front==-1 && rear==-1){
-      cout<<"\nunderflow\n";
-      // return;
-    }
-    else{
-    front++;
-  }
-  }
-
-void display(){
-  for(int i=front;i<rear;i++){
-    cout<<arr[i]<<"\n";
-  }
-  return ;
+void deposit(int x){
+  bal+=x;
+  cout<<"\n money deposited successfully !\n\n";
 }
-  
+
+
+void withdraw(int x){
+  if(x>bal){
+    cout<<"\n YOU DONT HAVE ENOUGH BALANCE\n THANK YOU VISIT AGAIN\n";
+    balance();
+    return;
+  }
+  bal-=x;
+  cout<<"\n money withdrawal successfully !\n\n""";
+}
+
+void balance(){
+  if(bal==0){
+    cout<<"\nKANGLE , KUCH NI H TERE PASS\n";
+    return;
+  }
+  cout<<"\n YOUR BALANCE IS : "<<bal<<"\n";
+}
+
+
 };
 int main(){
-  queue c;
-  int choise, value;
-
-do{
-  cout<<"1.enqueue \n";
-  cout<<"2.dequeue \n";
-  cout<<"3.display \n";
-  cout<<"4.EXIT \n";
-  cout<<"enter yout choise: ";
-  cin>>choise;
-
-  switch(choise){
+  system ("cls");
+  BANK B;
+int choice, value;
+  do{
+    cout<<"--------------------------------WELCOME TO GAPLA BANK---------------------------------------------------\n";
+    cout<<"1.DEPOSIT MONEY\n";
+    cout<<"2.WITHRAWAL\n";
+    cout<<"3. CHECK BALANCE\n";
+    cout<<"4. EXIT\n";
+    cout<<"ENTER YOUR CHOICE: ";
+    cin>>choice;
+       switch(choice){
     case 1:
-    cout<<"enter the value to be enqueue: ";
+    cout<<"ENTER THE MONET TO BE DEPOSITED: ";
     cin>>value;
-    c.enqueue(value);
+    B.deposit(value);
     break;
 
-    case 2:
-    c.dequeue();
-      cout<<"\nvalue dequeued\n";
-    break;
 
-    case 3:
-    cout<<"the elements in queue are : ";
-    c.display();
-    break;
-
-    case 4:
-     cout<<"EXIT";
+     case 2:
+     cout<<"ENTER THE MONEY TO BE WITHDRAW: ";
+     cin>> value;
+     B.withdraw(value);
      break;
 
-    default:
-    cout<<"INVAILED H BKL";
-  }
+     case 3:
+        B.balance();
+        break;
 
+     case 4:
+     cout<<"\nTHANKS FOR VISITING!!\n\n";
+     break;
+     
+     default:
+     cout<< "INVALID CHOICE!!";
+     break;
 }
-
-  while(choise<4);
+}
+while(choice<4);
 }

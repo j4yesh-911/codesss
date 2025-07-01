@@ -233,15 +233,15 @@
 
 //                                           ASCII
 
-#include<stdio.h>
-int main(){
-    system ("cls");
-    for(int n= 33; n<253;n++){
-    printf("%c",n);
-}
-//     int a=7;
-//  printf("%c",a);
-}
+// #include<stdio.h>
+// int main(){
+//     system ("cls");
+//     for(int n= 33; n<253;n++){
+//     printf("%c",n);
+// }
+// //     int a=7;
+// //  printf("%c",a);
+// }
 
 //     
 
@@ -252,9 +252,12 @@ int main(){
 
 #include <windows.h>
 int main() {
-    Beep(170, 3000); 
+    for(int i =0; i<10; i++){
+    Beep(170, 1000); 
     Sleep(2000);
-     Beep(170, 3000); 
+     Beep(170, 1000); 
+         Sleep(2000);
+    }
     
     return 0;
 }
