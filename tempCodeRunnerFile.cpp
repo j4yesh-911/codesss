@@ -1,7 +1,13 @@
- int dequeue(){
-//   if(front ==0 && rear==0){
-//     cout<<"under flow";
-//     return -1;
-//   }
-//   front ++;
-// }
+#include<iostream>
+using namespace std;
+int main(){
+    int n;
+    cin>>n;
+    for(int i= 0;i<n;i++){
+        for(int j=n;j>n-i-1;j--){
+            cout<<" * ";
+        }
+        cout<<endl;
+    }
+    return 0 ;
+}

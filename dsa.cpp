@@ -584,77 +584,96 @@
 
 
 //                                             BANK SYSTEM
+// #include <iostream>
+// using namespace std;
+// class BANK{
+//   int bal=0;
+
+// public:
+
+// void deposit(int x){
+//   bal+=x;
+//   cout<<"\n money deposited successfully !\n\n";
+// }
+
+
+// void withdraw(int x){
+//   if(x>bal){
+//     cout<<"\n YOU DONT HAVE ENOUGH BALANCE\n THANK YOU VISIT AGAIN\n";
+//     balance();
+//     return;
+//   }
+//   bal-=x;
+//   cout<<"\n money withdrawal successfully !\n\n""";
+// }
+
+// void balance(){
+//   if(bal==0){
+//     cout<<"\nKANGLE , KUCH NI H TERE PASS\n";
+//     return;
+//   }
+//   cout<<"\n YOUR BALANCE IS : "<<bal<<"\n";
+// }
+
+
+// };
+// int main(){
+//   system ("cls");
+//   BANK B;
+// int choice, value;
+//   do{
+//     cout<<"--------------------------------WELCOME TO GAPLA BANK---------------------------------------------------\n";
+//     cout<<"1.DEPOSIT MONEY\n";
+//     cout<<"2.WITHRAWAL\n";
+//     cout<<"3. CHECK BALANCE\n";
+//     cout<<"4. EXIT\n";
+//     cout<<"ENTER YOUR CHOICE: ";
+//     cin>>choice;
+//        switch(choice){
+//     case 1:
+//     cout<<"ENTER THE MONET TO BE DEPOSITED: ";
+//     cin>>value;
+//     B.deposit(value);
+//     break;
+
+
+//      case 2:
+//      cout<<"ENTER THE MONEY TO BE WITHDRAW: ";
+//      cin>> value;
+//      B.withdraw(value);
+//      break;
+
+//      case 3:
+//         B.balance();
+//         break;
+
+//      case 4:
+//      cout<<"\nTHANKS FOR VISITING!!\n\n";
+//      break;
+     
+//      default:
+//      cout<< "INVALID CHOICE!!";
+//      break;
+// }
+// }
+// while(choice<4);
+// }
+
+
+
 #include <iostream>
 using namespace std;
-class BANK{
-  int bal=0;
-
-public:
-
-void deposit(int x){
-  bal+=x;
-  cout<<"\n money deposited successfully !\n\n";
+int main (){
+  system("cls");
+  int n=100;
+  for(int i =0; i<=n; i++){
+   for(int k =i; k<=n;k++){
+    cout<<" ";
+   }
+    for(int j=n; j>n-i;j--){
+    cout<<"* ";
+    }
+    cout<<"\n";
+  
 }
-
-
-void withdraw(int x){
-  if(x>bal){
-    cout<<"\n YOU DONT HAVE ENOUGH BALANCE\n THANK YOU VISIT AGAIN\n";
-    balance();
-    return;
-  }
-  bal-=x;
-  cout<<"\n money withdrawal successfully !\n\n""";
-}
-
-void balance(){
-  if(bal==0){
-    cout<<"\nKANGLE , KUCH NI H TERE PASS\n";
-    return;
-  }
-  cout<<"\n YOUR BALANCE IS : "<<bal<<"\n";
-}
-
-
-};
-int main(){
-  system ("cls");
-  BANK B;
-int choice, value;
-  do{
-    cout<<"--------------------------------WELCOME TO GAPLA BANK---------------------------------------------------\n";
-    cout<<"1.DEPOSIT MONEY\n";
-    cout<<"2.WITHRAWAL\n";
-    cout<<"3. CHECK BALANCE\n";
-    cout<<"4. EXIT\n";
-    cout<<"ENTER YOUR CHOICE: ";
-    cin>>choice;
-       switch(choice){
-    case 1:
-    cout<<"ENTER THE MONET TO BE DEPOSITED: ";
-    cin>>value;
-    B.deposit(value);
-    break;
-
-
-     case 2:
-     cout<<"ENTER THE MONEY TO BE WITHDRAW: ";
-     cin>> value;
-     B.withdraw(value);
-     break;
-
-     case 3:
-        B.balance();
-        break;
-
-     case 4:
-     cout<<"\nTHANKS FOR VISITING!!\n\n";
-     break;
-     
-     default:
-     cout<< "INVALID CHOICE!!";
-     break;
-}
-}
-while(choice<4);
 }
