@@ -1,9 +1,7 @@
-#include<stdio.h>
-int main(){
-    system ("cls");
-    for(int n= 33; n<253;n++){
-    printf("%c",n);
+int atoi(char s[]){
+int i,n;
+for(i=0;s[i]>='0'&& s[i]<=9;i++){
+    n=10*n+(s[i]-'0');
 }
-//     int a=7;
-//  printf("%c",a);
+return 0;
 }
