@@ -699,29 +699,198 @@
 
 //                                   DIAMOND PATTERN 
 
+// #include <iostream>
+// using namespace std;
+// int main (){
+//   system("cls");
+//   int n=5;
+//   for(int i =0; i<=n; i++){
+//    for(int k =i; k<=n;k++){
+//     cout<<" ";
+//    }
+//     for(int j=n; j>n-i;j--){
+//     cout<<"* ";
+//     }
+//     cout<<"\n";
+  
+// }
+//   for(int i =5; i>=0; i--){
+//    for(int k =i; k<=n;k++){
+//     cout<<" ";
+//    }
+//     for(int j=n; j>n-i;j--){
+//     cout<<"* ";
+//     }
+//     cout<<"\n";
+  
+// }
+// }
+
+
+
+// #include <iostream>
+// using namespace std;
+// int main (){
+//   system("cls");
+//   int n=5;
+//   for(int i =0; i<=n; i++){
+//    for(int k =i; k<=n;k++){
+//     cout<<" ";
+//    }
+//     for(int j=n; j>n-i;j--){
+//     cout<<"* ";
+//     }
+//     cout<<"\n";
+  
+// }
+//   for(int i =5; i>0; i--){
+//    for(int k =i; k<=n;k++){
+//     cout<<" ";
+//    }
+//     for(int j=n; j>n-i;j--){
+//     cout<<"* ";
+//     }
+//     cout<<"\n";
+  
+// }
+// }
+
+
+
 #include <iostream>
 using namespace std;
-int main (){
-  system("cls");
-  int n=5;
-  for(int i =0; i<=n; i++){
-   for(int k =i; k<=n;k++){
-    cout<<" ";
-   }
-    for(int j=n; j>n-i;j--){
-    cout<<"* ";
-    }
-    cout<<"\n";
-  
+class node{
+  public:
+int data;
+node*ptr;
+public:
+node(int value){
+ data = value;
+ptr = NULL;
 }
-  for(int i =5; i>=0; i--){
-   for(int k =i; k<=n;k++){
-    cout<<" ";
-   }
-    for(int j=n; j>n-i;j--){
-    cout<<"* ";
-    }
-    cout<<"\n";
-  
+};
+class linkedlist {
+ node*head;
+ public: 
+ linkedlist(){
+ head = nullptr;
+ }
+void insert(int value){
+  node*temp;
+    node* newnode = new node(value);
+      newnode->ptr=head;
+      head =newnode;
 }
+void display(){
+  node*temp=head;
+  while(temp!=nullptr){
+    cout<<"->"<< temp->data;
+    temp= temp->ptr;
+  }
+  delete temp;
 }
+};
+int main(){  
+  // node n;
+  linkedlist l;
+   l.insert(10);
+   l.insert(20);
+   l.insert(30);
+   cout <<"your fuckin linked list ele are :";
+   l.display();
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// #include <iostream>
+// using namespace std;
+
+// // Node structure
+// struct Node {
+//     int data;
+//     Node* next;
+
+//     Node(int value) {
+//         data = value;
+//         next = nullptr;
+//     }
+// };
+
+// // Singly Linked List class
+// class LinkedList {
+// private:
+//     Node* head;
+
+// public:
+//     LinkedList() {
+//         head = nullptr;
+//     }
+
+//     // Insert at the beginning
+//     void insertAtBeginning(int value) {
+//         Node* newNode = new Node(value);
+//         newNode->next = head;
+//         head = newNode;
+//     }
+
+//     // Display the list
+//     void display() {
+//         Node* temp = head;
+//         while (temp != nullptr) {
+//             cout << temp->data << " -> ";
+//             temp = temp->next;
+//         }
+//         cout << "NULL\n";
+//     }
+
+//     // Destructor to free memory
+//     ~LinkedList() {
+//         Node* temp;
+//         while (head != nullptr) {
+//             temp = head;
+//             head = head->next;
+//             delete temp;
+//         }
+//     }
+// };
+
+// // Main function to test
+// int main() {
+//     LinkedList list;
+
+//     list.insertAtBeginning(30);
+//     list.insertAtBeginning(20);
+//     list.insertAtBeginning(10);
+
+//     cout << "Linked List (after inserting at beginning): ";
+//     list.display();
+
+//     return 0;
+// }
