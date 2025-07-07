@@ -827,6 +827,13 @@ void insert(int value){
       newnode->ptr=head;
       head =newnode;
 }
+
+void deleteatbig(){
+  node*temp =head;
+  head = temp->ptr;
+    delete temp;
+  }
+
 void deletefromlast(){
     node*temp=head;
     while(temp->ptr->ptr!=nullptr){
@@ -846,13 +853,15 @@ void display(){
 }
 };
 int main(){  
-  // node n;
   linkedlist l;
    l.insert(10);
    l.insert(20);
    l.insert(30);
    cout <<"your fuckin linked list ele are :\n";
    l.display();
+   l.deleteatbig();
+   cout<<"\nnow your linked list after deleting the node at first is :\n";
+  l.display();
    cout<<"\n";
    l.deletefromlast();
    cout <<"your fuckin linked list ele are :\n";
