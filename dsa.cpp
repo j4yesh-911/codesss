@@ -821,6 +821,16 @@ class linkedlist {
  linkedlist(){
  head = nullptr;
  }
+ void insertatend(int value){
+node* newnode = new node(value);
+ node* temp = head;
+        while (temp->ptr != nullptr) {
+            temp = temp->ptr;
+        }
+        temp->ptr = newnode;
+    }
+
+
 void insert(int value){
   node*temp;
     node* newnode = new node(value);
@@ -857,6 +867,7 @@ int main(){
    l.insert(10);
    l.insert(20);
    l.insert(30);
+   l.insertatend(40);
    cout <<"your fuckin linked list ele are :\n";
    l.display();
    l.deleteatbig();
