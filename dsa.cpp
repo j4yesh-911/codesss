@@ -830,7 +830,40 @@ node* newnode = new node(value);
         temp->ptr = newnode;
     }
 
+ void insertAtPosition(int value, int position) {
+ node* newnode = new node(value);
 
+if (position <= 0) {
+cout << "Invalid position.\n";
+delete newnode;
+return;
+ }
+ // Insert at head
+ if (position == 1) {
+ newnode->ptr = head;
+ head = newnode;
+return;
+  }
+
+ node* temp = head;
+ int count = 1;
+
+  // Traverse to the (position-1)th node
+ while (temp != nullptr && count < position - 1) {
+ temp = temp->ptr;
+  count++;
+ }
+
+ if (temp == nullptr) {
+ cout << "Position out of bounds.\n";
+ delete newnode;
+ return;
+ }
+
+ // Insert newnode after temp
+newnode->ptr = temp->ptr;
+ temp->ptr = newnode;
+    }
 void insert(int value){
   node*temp;
     node* newnode = new node(value);
@@ -868,6 +901,7 @@ int main(){
    l.insert(20);
    l.insert(30);
    l.insertatend(40);
+   l.insertAtPosition(50,2);
    cout <<"your fuckin linked list ele are :\n";
    l.display();
    l.deleteatbig();
