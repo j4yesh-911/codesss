@@ -886,6 +886,43 @@ void deletefromlast(){
    temp->ptr =nullptr;
 
   }
+   void deleteAtPosition(int position) {
+        if (head == nullptr) {
+            cout << "List is empty.\n";
+            return;
+        }
+
+        if (position <= 0) {
+            cout << "Invalid position.\n";
+            return;
+        }
+
+        if (position == 1) {
+            node* temp = head;
+            head = head->ptr;
+            delete temp;
+            return;
+        }
+
+        node* temp = head;
+        int count = 1;
+
+        while (temp != nullptr && count < position - 1) {
+            temp = temp->ptr;
+            count++;
+        }
+
+        if (temp == nullptr || temp->ptr == nullptr) {
+            cout << "Position out of bounds.\n";
+            return;
+        }
+
+        node* toDelete = temp->ptr;
+        temp->ptr = toDelete->ptr;
+        delete toDelete;
+    }
+
+ 
 void display(){
   node*temp=head;
   while(temp!=nullptr){
@@ -909,6 +946,7 @@ int main(){
   l.display();
    cout<<"\n";
    l.deletefromlast();
+   l.deleteAtPosition(3);
    cout <<"your fuckin linked list ele are :\n";
    l.display();
 
