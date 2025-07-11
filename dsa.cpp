@@ -726,6 +726,48 @@
 // }
 // }
 
+//                                      PATTERN
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n;
+    cout << "Enter the number of rows: ";
+    cin >> n;
+
+    // Outer loop for rows
+    for (int i = 1; i <= n; i++) {
+        // Print leading spaces
+        for (int space = 1; space <= n - i; space++) {
+            cout << " ";
+        }
+
+        // Print stars and spaces
+        for (int j = 1; j <= 2 * i - 1; j++) {
+            // Print star at the borders
+            if (j == 1 || j == 2 * i - 1 || i == n) {
+                cout << "*";
+            } else {
+                cout << " ";
+            }
+        }
+
+        cout << endl;
+    }
+
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+
 
 
 // #include <iostream>
@@ -803,151 +845,154 @@
 
 
 
-#include <iostream>
-using namespace std;
-class node{
-  public:
-int data;
-node*ptr;
-public:
-node(int value){
- data = value;
-ptr = NULL;
-}
-};
-class linkedlist {
- node*head;
- public: 
- linkedlist(){
- head = nullptr;
- }
- void insertatend(int value){
-node* newnode = new node(value);
- node* temp = head;
-        while (temp->ptr != nullptr) {
-            temp = temp->ptr;
-        }
-        temp->ptr = newnode;
-    }
+// #include <iostream>
+// using namespace std;
+// class node{
+//   public:
+// int data;
+// node*ptr;
+// public:
+// node(int value){
+//  data = value;
+// ptr = NULL;
+// }
+// };
+// class linkedlist {
+//  node*head;
+//  public: 
+//  linkedlist(){
+//  head = nullptr;
+//  }
+//  void insertatend(int value){
+// node* newnode = new node(value);
+//  node* temp = head;
+//         while (temp->ptr != nullptr) {
+//             temp = temp->ptr;
+//         }
+//         temp->ptr = newnode;
+//     }
 
- void insertAtPosition(int value, int position) {
- node* newnode = new node(value);
+//  void insertAtPosition(int value, int position) {
+//  node* newnode = new node(value);
 
-if (position <= 0) {
-cout << "Invalid position.\n";
-delete newnode;
-return;
- }
- // Insert at head
- if (position == 1) {
- newnode->ptr = head;
- head = newnode;
-return;
-  }
+// if (position <= 0) {
+// cout << "Invalid position.\n";
+// delete newnode;
+// return;
+//  }
+//  // Insert at head
+//  if (position == 1) {
+//  newnode->ptr = head;
+//  head = newnode;
+// return;
+//   }
 
- node* temp = head;
- int count = 1;
+//  node* temp = head;
+//  int count = 1;
 
-  // Traverse to the (position-1)th node
- while (temp != nullptr && count < position - 1) {
- temp = temp->ptr;
-  count++;
- }
+//   // Traverse to the (position-1)th node
+//  while (temp != nullptr && count < position - 1) {
+//  temp = temp->ptr;
+//   count++;
+//  }
 
- if (temp == nullptr) {
- cout << "Position out of bounds.\n";
- delete newnode;
- return;
- }
+//  if (temp == nullptr) {
+//  cout << "Position out of bounds.\n";
+//  delete newnode;
+//  return;
+//  }
 
- // Insert newnode after temp
-newnode->ptr = temp->ptr;
- temp->ptr = newnode;
-    }
-void insert(int value){
-  node*temp;
-    node* newnode = new node(value);
-      newnode->ptr=head;
-      head =newnode;
-}
+//  // Insert newnode after temp
+// newnode->ptr = temp->ptr;
+//  temp->ptr = newnode;
+//     }
+// void insert(int value){
+//   node*temp;
+//     node* newnode = new node(value);
+//       newnode->ptr=head;
+//       head =newnode;
+// }
 
-void deleteatbig(){
-  node*temp =head;
-  head = temp->ptr;
-    delete temp;
-  }
+// void deleteatbig(){
+//   node*temp =head;
+//   head = temp->ptr;
+//     delete temp;
+//   }
 
-void deletefromlast(){
-    node*temp=head;
-    while(temp->ptr->ptr!=nullptr){
-   temp= temp->ptr;
-    }
-   delete temp->ptr;
-   temp->ptr =nullptr;
+// void deletefromlast(){
+//     node*temp=head;
+//     while(temp->ptr->ptr!=nullptr){
+//    temp= temp->ptr;
+//     }
+//    delete temp->ptr;
+//    temp->ptr =nullptr;
 
-  }
-   void deleteAtPosition(int position) {
-        if (head == nullptr) {
-            cout << "List is empty.\n";
-            return;
-        }
+//   }
+//    void deleteAtPosition(int position) {
+//         if (head == nullptr) {
+//             cout << "List is empty.\n";
+//             return;
+//         }
 
-        if (position <= 0) {
-            cout << "Invalid position.\n";
-            return;
-        }
+//         if (position <= 0) {
+//             cout << "Invalid position.\n";
+//             return;
+//         }
 
-        if (position == 1) {
-            node* temp = head;
-            head = head->ptr;
-            delete temp;
-            return;
-        }
+//         if (position == 1) {
+//             node* temp = head;
+//             head = head->ptr;
+//             delete temp;
+//             return;
+//         }
 
-        node* temp = head;
-        int count = 1;
+//         node* temp = head;
+//         int count = 1;
 
-        while (temp != nullptr && count < position - 1) {
-            temp = temp->ptr;
-            count++;
-        }
+//         while (temp != nullptr && count < position - 1) {
+//             temp = temp->ptr;
+//             count++;
+//         }
 
-        if (temp == nullptr || temp->ptr == nullptr) {
-            cout << "Position out of bounds.\n";
-            return;
-        }
+//         if (temp == nullptr || temp->ptr == nullptr) {
+//             cout << "Position out of bounds.\n";
+//             return;
+//         }
 
-        node* toDelete = temp->ptr;
-        temp->ptr = toDelete->ptr;
-        delete toDelete;
-    }
+//         node* toDelete = temp->ptr;
+//         temp->ptr = toDelete->ptr;
+//         delete toDelete;
+//     }
 
  
-void display(){
-  node*temp=head;
-  while(temp!=nullptr){
-    cout<<"->"<< temp->data;
-    temp= temp->ptr;
-  }
-  delete temp;
-}
-};
-int main(){  
-  linkedlist l;
-   l.insert(10);
-   l.insert(20);
-   l.insert(30);
-   l.insertatend(40);
-   l.insertAtPosition(50,2);
-   cout <<"your fuckin linked list ele are :\n";
-   l.display();
-   l.deleteatbig();
-   cout<<"\nnow your linked list after deleting the node at first is :\n";
-  l.display();
-   cout<<"\n";
-   l.deletefromlast();
-   l.deleteAtPosition(3);
-   cout <<"your fuckin linked list ele are :\n";
-   l.display();
+// void display(){
+//   node*temp=head;
+//   while(temp!=nullptr){
+//     cout<<"->"<< temp->data;
+//     temp= temp->ptr;
+//   }
+//   delete temp;
+// }
+// };
+// int main(){  
+//   linkedlist l;
+//    l.insert(10);
+//    l.insert(20);
+//    l.insert(30);
+//    l.insertatend(40);
+//    l.insertAtPosition(50,2);
+//    cout <<"your fuckin linked list ele are :\n";
+//    l.display();
+//    l.deleteatbig();
+//    cout<<"\nnow your linked list after deleting the node at first is :\n";
+//   l.display();
+//    cout<<"\n";
+//    l.deletefromlast();
+//    l.deleteAtPosition(3);
+//    cout <<"your fuckin linked list ele are :\n";
+//    l.display();
 
-}
+// }
+
+
+
