@@ -728,36 +728,36 @@
 
 //                                      PATTERN
 
-#include <iostream>
-using namespace std;
+// #include <iostream>
+// using namespace std;
 
-int main() {
-    int n;
-    cout << "Enter the number of rows: ";
-    cin >> n;
+// int main() {
+//     int n;
+//     cout << "Enter the number of rows: ";
+//     cin >> n;
 
-    // Outer loop for rows
-    for (int i = 1; i <= n; i++) {
-        // Print leading spaces
-        for (int space = 1; space <= n - i; space++) {
-            cout << " ";
-        }
+//     // Outer loop for rows
+//     for (int i = 1; i <= n; i++) {
+//         // Print leading spaces
+//         for (int space = 1; space <= n - i; space++) {
+//             cout << " ";
+//         }
 
-        // Print stars and spaces
-        for (int j = 1; j <= 2 * i - 1; j++) {
-            // Print star at the borders
-            if (j == 1 || j == 2 * i - 1 || i == n) {
-                cout << "*";
-            } else {
-                cout << " ";
-            }
-        }
+//         // Print stars and spaces
+//         for (int j = 1; j <= 2 * i - 1; j++) {
+//             // Print star at the borders
+//             if (j == 1 || j == 2 * i - 1 || i == n) {
+//                 cout << "*";
+//             } else {
+//                 cout << " ";
+//             }
+//         }
 
-        cout << endl;
-    }
+//         cout << endl;
+//     }
 
-    return 0;
-}
+//     return 0;
+// }
 
 
 
@@ -995,4 +995,35 @@ int main() {
 // }
 
 
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n;
+    cout << "Enter the size of the array: ";
+    cin >> n;
+
+    int arr[n];
+    cout << "Enter " << n << " elements:\n";
+    for(int i = 0; i < n; i++) {
+        cin >> arr[i];
+    }
+
+    bool isSorted = true;
+
+    for(int i = 0; i < n - 1; i++) {
+        if(arr[i] > arr[i + 1]) {
+            isSorted = false;
+            break;
+        }
+    }
+
+    if(isSorted) {
+        cout << "true (The array is sorted in non-decreasing order)" << endl;
+    } else {
+        cout << "false (The array is not sorted)" << endl;
+    }
+
+    return 0;
+}
 
