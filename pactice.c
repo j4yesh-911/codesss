@@ -306,11 +306,21 @@
 
 
 
-int atoi(char s[]) {
-    int i, n;
-    n = 0;
-    for (i = 0; s[i] >= '0' && s[i] <= '9'; ++i)
-        n = 10 * n + (s[i] - '0');
+// int atoi(char s[]) {
+//     int i, n;
+//     n = 0;
+//     for (i = 0; s[i] >= '0' && s[i] <= '9'; ++i)
+//         n = 10 * n + (s[i] - '0');
 
-    return n;
+//     return n;
+// }
+
+
+
+#include <stdio.h>
+int main (){
+    char c [3]={'a','b','c'};
+    for(int i=0; i<3;i++){
+    printf("%c",c[i]);
+    }
 }
